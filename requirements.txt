@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+librosa
+pydub
+tensorflow==2.11.0
+keras==2.11.0
+cupy-cuda117==10.6.0
+numba
+fastapi
+uvicorn
+python-multipart
+IPython
+matplotlib
+scikit-learn
