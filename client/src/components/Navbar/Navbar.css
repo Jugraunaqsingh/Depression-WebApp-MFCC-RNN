@@ -1,0 +1,133 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #d7dee0 !important;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0e6983;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+  }
+  
+  .logo .feature-icon {
+    flex-shrink: 0;
+  }
+  
+  .side {
+    display: flex;
+    gap: 25px;
+    font-size: 17px;
+    align-items: center;
+  }
+  
+  .side a:hover {
+    font-weight: bolder;
+  }
+  
+  button {
+    padding: 11px 25px;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+    background-color: #8ec4d3;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: #0e6983;
+    color: white;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+  }
+  
+  .user-info span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .logout-btn {
+    background-color: #0e6983;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #0d5a70;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+    }
+  
+    .logo {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      align-items: center;
+      padding-top: 10px;
+    }
+  
+    .side a {
+      font-size: 18px;
+      padding: 8px 0;
+      text-align: center;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 16px;
+    }
+  }
+  
+  /* Media Query for very small screens */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 15px 10px;
+    }
+  
+    .logo {
+      font-size: 22px;
+    }
+  
+    .side {
+      gap: 10px;
+    }
+  
+    button {
+      font-size: 15px;
+    }
+  }
