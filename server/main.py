@@ -7,6 +7,11 @@ import tensorflow as tf
 import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
+#CHANGES MADE FOR FEEDBACK LOOP
+from fastapi import Form
+from db_feedback import save_feedback
+import json
+
 
 app = FastAPI()
 
@@ -56,6 +61,13 @@ async def upload_audio(file: UploadFile = File(...)):
         audio = AudioSegment.from_file(file_path)
         audio = effects.normalize(audio)
         mfcc = MFCC_Preprocess(audio)
+
+        #SAVING THE MFCCS FOR RETRAINING
+        os.makedirs("mfccs", exist_ok=True)
+        mfcc_save_path = f"mfccs/{file.filename.replace('.wav', '.npy')}"
+        np.save(mfcc_save_path, mfcc)
+
+
         input_tensor = pad_sequences([mfcc], padding="pre")
 
         pred_binary, pred_scores = model.predict(input_tensor, verbose=0)
@@ -74,3 +86,40 @@ async def upload_audio(file: UploadFile = File(...)):
     except Exception as e:
         print(f"❌ Error: {e}")
         return {"success": False, "error": str(e)}
+
+
+
+@app.post("/submit_feedback")
+async def submit_feedback(
+    audio_id: str = Form(...),
+    model_prediction: str = Form(...),
+    doctor_label: str = Form(...),
+    phq_score: str = Form(...),
+    report_file: UploadFile = File(None)  # optional
+):
+    try:
+        # Parse stringified JSON inputs
+        model_pred = json.loads(model_prediction)
+        doctor_lbl = json.loads(doctor_label)
+
+        # Construct MFCC path (adjust if you store them elsewhere)
+        mfcc_path = f"mfccs/{audio_id.replace('.wav', '.npy')}"
+
+        # Save feedback using helper function
+        save_feedback(
+            audio_id=audio_id,
+            mfcc_path=mfcc_path,
+            model_prediction=model_pred,
+            doctor_label=doctor_lbl,
+            phq_score=int(phq_score)
+        )
+
+        return {"status": "success"}
+
+    except Exception as e:
+        print(f"❌ Error saving feedback: {e}")
+        return {"status": "error", "detail": str(e)}
+# ... existing routes like /upload_audio, /submit_feedback, etc.
+
+from auth_routes import router as auth_router
+app.include_router(auth_router)
