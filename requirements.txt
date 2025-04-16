@@ -13,3 +13,12 @@ python-multipart
 IPython
 matplotlib
 scikit-learn
+pymongo
+python-dotenv
+aiofiles
+typing-extensions
+bcrypt
+PyJWT
+python-dotenv
+email-validator
+requests
