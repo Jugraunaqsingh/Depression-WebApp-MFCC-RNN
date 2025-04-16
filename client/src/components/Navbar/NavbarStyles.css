@@ -1,0 +1,68 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #d7dee0 !important;
+    border: none;
+    width: 100%;
+    position: relative;
+  }
+  
+  .nav-container a {
+    text-decoration: none;
+    color: #0e6983;
+  }
+  
+  .nav-logo {
+    font-size: 30px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  
+  .nav-logo .feature-icon {
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    font-size: 17px;
+    align-items: center;
+  }
+  
+  .nav-links a:hover {
+    font-weight: bolder;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #0e6983;
+  }
+  
+  .user-info span {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+    background-color: #0e6983;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #0d5a70;
+  }
