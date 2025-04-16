@@ -139,17 +139,6 @@ docker run --gpus all --env-file .env ^
 
 ---
 
-## 👥 Team
-
-**VIT B.Tech (Machine Learning – B2)**
-- Arhaan Khan (22BBS0053)  
-- Jugraunaq Singh (22BBS0013)  
-- Riya Singh (22BBS0130)  
-
-**Faculty Guide**: Dr. Aarthy S. L
-
----
-
 ## 📬 Future Improvements
 
 - 📈 Feedback-based auto-retraining (A/B tested)
