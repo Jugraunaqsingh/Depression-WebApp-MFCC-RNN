@@ -14,6 +14,10 @@
 This system aims to **detect clinical depression** through acoustic cues in speech using enhanced MFCC features and deep neural networks. It provides a **reliable, real-time, and GPU-accelerated diagnosis** with doctor feedback integration and support for retraining.
 
 ---
+##WebPage Design
+![Web Page](readmeimages/img2.png)
+
+
 
 ## 📌 Features
 
