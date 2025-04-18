@@ -67,7 +67,7 @@ const DepressionTest = () => {
       </div>
 
       <div className="mt-8">
-        <h3 className="text-center text-xl font-semibold mb-4">📁 Or Upload Pre-recorded Audio</h3>
+        <h3 className="text-center text-xl font-semibold mb-4">📁 Or Upload Pre-recorded Session Audio</h3>
         <AudioUpload />
       </div>
     </div>
